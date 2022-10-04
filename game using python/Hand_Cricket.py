@@ -1,9 +1,15 @@
 import random as r
 
-choice = [i for i in range(7)]
-choice1 = [i for i in range(11)]
-choice2 = [i for i in range(16)]
+print("Welcome you to Hand_Cricket in Python !")
 
+user = input("Enter your name: ")
+print("Hello" + user + '!')
+
+choice = list(range(7))
+choice1 = list(range(11))
+choice2 = list(range(16))
+
+print("Enter in which range you want to play in : ")
 print(f'''
       1. {choice}
       2. {choice1}
@@ -15,10 +21,11 @@ ch = int(input("Enter your choice (1,2,3) : "))
 def toss():
     global ch1,ch2
     if (x := input("Enter E for even and O for odd : ")) == 'E':
-        n = int(input("Enter a value for toss : "))
+        n = int(input("Enter a value(1-10) for toss : "))
         m = r.choice(choice1)
+
         if (n+m) % 2 == 0:
-            ch1 = input("Enter B if u want to bat else W : ")
+            ch1 = input("Enter B if u want to bat or W for bowling : ")
             if ch1 == "batting":
                 ch2 = "bowling"
             elif ch1 == "bowling":
@@ -85,19 +92,19 @@ def game(choices: list, verb, verb2):
         else:
             l1.append(batter)
     if verb == 'batting':
-        batter = 'user'
+        batter = user
         bowler = 'computer'
     elif verb == 'bowling':
         batter = 'computer'
-        bowler = 'user'
+        bowler = user
     if f == 1:
         print(f"{batter} wins")
     elif f == 0:
         print(f"{bowler} wins")
 
 
-print(F'''User chooses {var[-3]} and user enters {var[-2]} and comp chooses {var[-1]}
-user gets {var[0]} and computer has to {var[1][:4]}.''')
+print(F'''{user} chooses {var[-3]} and {user} enters {var[-2]} and computer chooses {var[-1]}
+{user} gets {var[0]} and computer has to {var[1][:4]}.''')
 if ch == 1:
     game(choice, var[0], var[1])
 elif ch == 2:
