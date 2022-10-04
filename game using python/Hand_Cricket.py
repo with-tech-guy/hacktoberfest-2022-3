@@ -1,3 +1,6 @@
+# Lang: Python
+# Author: K.om Senapati
+
 import random as r
 
 print("Welcome you to Hand_Cricket in Python !")
